@@ -8,11 +8,11 @@ RUN echo "deb-src http://deb.debian.org/debian buster main" >> /etc/apt/sources.
 CMD ["echo", "Installing Debian packages needed."]
 
 
-RUN apt update && apt install -y python python3 git python3-pip python-pip libmariadb-dev-compat wget ruby ruby-dev gem p7zip-full dnsrecon hydra nmap whois git gcc make libpcap-dev libnet-ssleay-perl build-essential zlib1g-dev sudo chromium xclip nano redis-server tmux
+RUN apt update && apt install -y python python3 git python3-pip libmariadb-dev-compat wget ruby ruby-dev gem p7zip-full dnsrecon hydra nmap whois git gcc make libpcap-dev libnet-ssleay-perl build-essential zlib1g-dev sudo chromium xclip nano redis-server tmux
 
 WORKDIR /opt/src/golang
-RUN wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
-RUN tar zxfv go1.14.2.linux-amd64.tar.gz
+RUN wget https://dl.google.com/go/go1.17.6.linux-amd64.tar.gz
+RUN tar zxfv go1.17.6.linux-amd64.tar.gz
 RUN ln -s /opt/src/golang/go/bin/go /usr/local/bin/
 RUN ln -s /opt/src/golang/go/bin/gofmt /usr/local/bin/
 RUN mkdir /root/go
