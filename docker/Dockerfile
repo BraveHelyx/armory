@@ -136,7 +136,7 @@ RUN touch /tmp/revision139
 
 
 
-RUN git clone https://github.com/depthsecurity/armory.git
+RUN git clone https://github.com/BraveHelyx/armory.git
 WORKDIR /opt/src/armory
 RUN git checkout armory2.0
 CMD ["echo", "Installing Armory"]

@@ -74,7 +74,7 @@ setup(
         "django",
         "django-picklefield",
         "django_q",
-        "redis",
+        "redis < 4.0.0",
     ],
     test_suite="nose.collector",
     tests_require=["nose"],
