@@ -119,9 +119,9 @@ RUN chmod +x /usr/local/bin/asnlookup.py
 RUN ln -s /opt/src/DomLink/domLink.py /usr/local/bin/domLink.py
 RUN chmod +x /usr/local/bin/domLink.py
 
-WORKDIR /opt/src/theHarvester
-RUN pip3 install -r requirements.txt
-RUN python3 setup.py install
+# WORKDIR /opt/src/theHarvester
+# RUN pip3 install -r requirements.txt
+# RUN python3 setup.py install
 
 
 RUN sed -i 's/\/opt\/exploitdb/\/opt\/src\/exploitdb/g' /opt/src/exploitdb/.searchsploit_rc
@@ -133,14 +133,11 @@ WORKDIR /opt/src
 # Going to increment this everytime I want to update armory.
 RUN touch /tmp/revision139
 
-
-
-
 RUN git clone https://github.com/BraveHelyx/armory.git
 WORKDIR /opt/src/armory
 RUN git checkout armory2.0
 CMD ["echo", "Installing Armory"]
-RUN pip3 install django # Not sure why this doesn't work from the setup
+RUN pip3 install django pyperclip mysqlclient ipwhois ipaddr fuzzywuzzy # Not sure why this doesn't work from the setup
 RUN python3 setup.py install
 RUN pip3 install jinja2 xlsxwriter django_q
 WORKDIR /root/current
